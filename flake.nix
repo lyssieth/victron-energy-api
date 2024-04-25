@@ -35,7 +35,7 @@
       };
     in {
       devShells.default = pkgs.mkShell {
-        inherit commonArgs;
+        inherit (commonArgs) buildInputs nativeBuildInputs;
       };
     });
 }
