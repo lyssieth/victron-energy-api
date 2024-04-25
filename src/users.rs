@@ -41,7 +41,7 @@ pub struct UserSuccess {
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct User {
-    pub id: i32,
+    pub id: String,
     pub name: String,
     pub email: String,
     pub country: String,
