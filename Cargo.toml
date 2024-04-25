@@ -7,3 +7,17 @@ publish = ["crates-io"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tracing = { version = "0.1", features = ["async-await"] }
+
+[features]
+default = ["rustls", "http2"]
+
+rustls = ["reqwest/rustls-tls"]
+http2 = ["reqwest/http2"]
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full"] }
